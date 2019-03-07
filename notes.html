@@ -1,0 +1,176 @@
+
+LISTAS EM HTML5 COM OL E UL
+	
+	1) Ordenado por número - type ="1"; ou para ordenar por letra type="a" ou "A"; ou para ordenar por algarismos romanos type="i" ou "I".
+
+		<ol type="1"> 'type 1<li>Home</li>
+			<li>Especificações</li>
+			<li>Fotos</li>
+			<li>Multimídia</li>
+			<li>Fale conosco</li>
+		</ol>
+		
+		
+	2) Use a propriedade "start" para começar a ordenação a partir de um determinado número ou letra. Obs: O start aceita apenas números.
+
+		<ol type="a" start ="3"> <li>Home</li>
+					<li>Especificações</li>
+					<li>Fotos</li>
+					<li>Multimídia</li>
+					<li>Fale conosco</li>
+				</ol>
+
+	3) Tipos de ul			
+
+
+		<ul type="square"> 
+			<li>Home</li>
+			<li>Especificações</li>
+			<li>Fotos</li>
+			<li>Multimídia</li>
+			<li>Fale conosco</li>
+		</ul>
+
+
+		<ul type="circle"> 
+			<li>Home</li>
+			<li>Especificações</li>
+			<li>Fotos</li>
+			<li>Multimídia</li>
+			<li>Fale conosco</li>
+		</ul>
+
+
+		<ul type="disc"> 
+			<li>Home</li>
+			<li>Especificações</li>
+			<li>Fotos</li>
+			<li>Multimídia</li>
+			<li>Fale conosco</li>
+		</ul>
+
+
+LINKS EM HTML
+
+	1) ao clicar no link, a guia atual é atualizada com a página apontada pelo link.
+
+		Ex.: Também chamado de <a href="http://glass.google.com">Project Glass</a>, o eletrônico é capaz de tirar...
+			ou
+			 Também chamado de <a href="http://glass.google.com" target="_self">Project Glass</a>, o eletrônico é capaz ...
+
+
+	2) ao clicar no link, uma nova aba é aberta no navegador.
+
+		Ex.: Também chamado de <a href="http://glass.google.com" target="_blank">Project Glass</a>, o eletrônico é capaz ...
+
+
+	3) Link para arquivo em outra pasta
+
+		<li><a href="_textos/multimidia-txt.html">Multimídia</a></li>
+
+
+FORMATÇÃO DE INTERFACES EM HTML5	
+
+	1) Centralização da interface: utiliza-se o margin e informa-se os parâmetros na ordem referente à margem superior seguida da margem direita, seguida da margem inferior, seguida da margem esquerda.
+
+	div#interface {
+		width: 900px;
+		background-color: #ffffff;
+		margin: -20px auto 0px auto;
+	}	
+
+	2) Configurar a margem interna: utiliza-se o padding. Caso, todas as margens tenham o mesmo tamanho, é possível informar apenas um valor:
+
+		div#interface {
+		padding: 10px 10px 10px 10px;
+	}	
+
+	ou
+
+		div#interface {
+		padding: 10px;
+	}	
+
+
+FONTES EM CSS3
+
+	1) Utilizando um arquivo de fontes.
+
+		@font-face{
+		font-family: 'FonteLogo';
+		src: url("../_fonts/bubblegum-sans-regular.otf");
+	}
+	header#cabecalho h1 {
+		font-family: 'FonteLogo', sans-serif;
+
+		color: #606060;
+
+
+	2) Importando uma fonte do Google	
+
+	- http://www.google.com/fonts
+	- escolher a fonte
+	- clicar no ícone 'Quick Use'
+	- escolher o estilo
+	- aba @import do item 3'Add this code to your website', copiar o código e colar no inicio do arquivo CSS
+
+		@charset "UTF-8";
+		@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
+	- copie o código do item 4 'Integrate the fonts int to your CSS' e cole no local a ser formatado
+
+		header#cabecalho h2 {<p></p>
+		font-family: 'Titillium Web', sans-serif;
+	}
+
+TABELAS EM HTML
+	tr = table row
+	td = table data
+
+	rowspan = expansão de linha (apenas para td)
+	colspan = expansão de colunas (apenas para td)
+
+
+JAVASCRIPT COM OBJETOS
+
+	onclick -> dispara o evento a partir de um clique
+		<img src="_imagens/lampada-apagada.jpg" onclick="acendeLampada()"/>
+
+	onmousemove -> dispara o evento quando o mouse passa sobre o objeto
+		<img src="_imagens/lampada-apagada.jpg" onmousemove="acendeLampada()"/>
+
+	onmouseout -> dispara o evento quando o mouse não está sobre o objeto
+	
+
+	
+FUNCÕES EM JAVASCRIPT
+
+	1) Primeira versão
+
+	
+			<script>
+				var quebrada = false;
+				function mudaLampada(tipo) {
+					if (tipo==1) {
+						arquivo = "_imagens/lampada-acesa.jpg";
+					}
+					if (tipo==2) {
+						arquivo = "_imagens/lampada-apagada.jpg";
+					}
+					if (tipo==3) {
+						arquivo = "_imagens/lampada-quebrada.jpg"
+					}
+					if (!quebrada){
+					document.getElementById("luz").src = arquivo;
+						if (tipo==3) {
+						quebrada = true;
+						}	
+					}
+				}
+			</script>
+
+			<body>
+				<h1>Acenda a lâmpada</h1>
+				<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3);" />
+			</body>
+
